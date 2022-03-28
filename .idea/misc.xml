@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.196" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/button_background.xml" value="0.22" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/button_res.xml" value="0.22" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/ic_launcher.xml" value="0.196" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/ic_launcher_background.xml" value="0.196" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.196" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/login_contunue_background.xml" value="0.22" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/login_contunue_res.xml" value="0.22" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/login_contunue_text_color.xml" value="0.22" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_fragmentact.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_login.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_login_method.xml" value="0.16" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_singup.xml" value="0.22" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/fragment_blank.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/fragment_loginmethodepage.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/fragmenttest.xml" value="0.33" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/hellop.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/l.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/login.xml" value="0.2" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/login_methode.xml" value="0.2" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/loginmethode.xml" value="0.5" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/singup1.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/singup2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/singup3.xml" value="0.33" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.196" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.196" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

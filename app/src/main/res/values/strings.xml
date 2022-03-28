@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">tndr</string>
+    <string name="tearms">By Clicking Login You agree About All Terms &amp; Conditions Of Our App</string>
+    <string name="login_google">Login With Google</string>
+    <string name="login_facebook">Login With Facebook</string>
+    <string name="login_email">Login With Email</string>
+    <string name="trouble">Trouble Logging In ?</string>
+    <string name="singup">Don\'t Have a Account ? Create One</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="confirm_pass">Confirm Password</string>
+    <string name="Continue">Continue</string>
+    <string name="username">Your User Name</string>
+    <string name="firstn">First Name</string>
+    <string name="lastn">Last Name</string>
+    <string name="ima">I am A</string>
+    <string name="man">Man</string>
+    <string name="woman">Woman</string>
+    <string name="bithday">My Birthday is</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
