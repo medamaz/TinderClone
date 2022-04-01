@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/iphone_12_pro_max__28">
+    android:background="@drawable/iphone_12_pro_max__28"
+    tools:context=".Frament_Maneger.singup1frg">
 
     <EditText
         android:id="@+id/Email_singup"
@@ -13,7 +14,7 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/email"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

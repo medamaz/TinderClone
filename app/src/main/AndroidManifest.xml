@@ -13,13 +13,10 @@
             android:name=".SingupActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginMethodActivity"
-            android:exported="false" />
-        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginMethodActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

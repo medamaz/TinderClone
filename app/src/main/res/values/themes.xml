@@ -9,6 +9,8 @@
     </style>
 
     <style name="edit_text">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textColorHint">@color/gray</item>
         <item name="android:background">@drawable/edittext_res</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_width">match_parent</item>

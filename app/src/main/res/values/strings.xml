@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">tndr</string>
+    <string name="app_name">Tinder Clone</string>
     <string name="tearms">By Clicking Login You agree About All Terms &amp; Conditions Of Our App</string>
     <string name="login_google">Login With Google</string>
     <string name="login_facebook">Login With Facebook</string>

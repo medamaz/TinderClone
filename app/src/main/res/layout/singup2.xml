@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/iphone_12_pro_max__28">
+    android:background="@drawable/iphone_12_pro_max__28"
+    tools:context=".Frament_Maneger.singup2frg">
 
     <TextView
         android:id="@+id/textView8"
@@ -21,7 +22,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/cnt"
+        android:id="@+id/cnt2"
         style="@style/login_cnt_button"
         android:text="@string/Continue"
         app:layout_constraintBottom_toBottomOf="parent"

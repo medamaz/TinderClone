@@ -9,6 +9,8 @@
     </style>
 
     <style name="edit_text">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textColorHint">@color/gray</item>
         <item name="android:background">@drawable/edittext_res</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_width">match_parent</item>
@@ -61,4 +63,10 @@
         <item name="android:inputType">number</item>
     </style>
 
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
 </resources>

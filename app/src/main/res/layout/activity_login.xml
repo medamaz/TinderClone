@@ -80,11 +80,13 @@
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/Trouble"
+        android:id="@+id/Singup"
         style="@style/label_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/trouble"
+        android:minHeight="48dp"
+        android:onClick="moveToSingup"
+        android:text="@string/singup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/iphone_12_pro_max__30"
-    android:onClick="switchview"
     tools:context=".LoginMethodActivity">
 
     <TextView
@@ -53,6 +52,7 @@
         android:id="@+id/email"
         style="@style/login_button"
         android:drawableStart="@drawable/email"
+        android:onClick="moveToLogin"
         android:text="@string/login_email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.269" />
 
     <TextView
-        android:id="@+id/Singup"
+        android:id="@+id/Trouble"
         style="@style/label_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

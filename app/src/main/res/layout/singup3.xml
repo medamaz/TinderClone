@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/iphone_12_pro_max__28"
-    >
+    tools:context=".Frament_Maneger.singup3frg">
 
     <TextView
         android:id="@+id/textView11"
