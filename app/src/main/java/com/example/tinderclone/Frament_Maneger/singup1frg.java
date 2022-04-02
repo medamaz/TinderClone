@@ -16,16 +16,13 @@ import com.example.tinderclone.Login.ValidationHelper;
 import com.example.tinderclone.R;
 
 public class singup1frg extends Fragment {
-
+    View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.singup1, container, false);
-        nextFragment(view);
+        view = inflater.inflate(R.layout.singup1, container, false);
         return view;
     }
-
-
-    private void nextFragment(View view){
+    /*private void nextFragment(){
         EditText email =(EditText) view.findViewById(R.id.Email_singup);
         EditText pass =(EditText) view.findViewById(R.id.Pass_singup);
         EditText cpass =(EditText) view.findViewById(R.id.Confirm_pass);
@@ -37,19 +34,17 @@ public class singup1frg extends Fragment {
                 String Email =email.getText().toString();
                 String Pass =pass.getText().toString();
                 String Cpass =cpass.getText().toString();
-                if (ValidationHelper.Validate(Email,Pass,Cpass)){
+                if (!ValidationHelper.Validate(Email,Pass,Cpass)){
                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.fragmentlay,new singup2frg());
+                    fragmentTransaction.replace(R.id.fragmentlay,new singup2frg(),"two");
                     fragmentTransaction.commit();
                 }
 
             }
         });
-    }
-
-    public void toastGen(String msg,View view){
+    }*/
+    public void toastGen(String msg){
 
         Toast.makeText(view.getContext(),msg, Toast.LENGTH_LONG).show();
     }
-
 }

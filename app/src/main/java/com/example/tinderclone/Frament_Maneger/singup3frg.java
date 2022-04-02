@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,38 +13,35 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.example.tinderclone.Frament_Maneger.singup2frg;
 import com.example.tinderclone.Login.Singup;
 import com.example.tinderclone.R;
 
 import java.time.Year;
 
 public class singup3frg extends Fragment {
-
-    int year,month,day;
+    View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.singup3, container, false);
-        date_Gestion(view);
-
+        view = inflater.inflate(R.layout.singup3, container, false);
         return view;
     }
-    private void nextFragment(View view){
+    /*private void nextFragment(){
         Button continue1 =(Button) view.findViewById(R.id.Singupfinal);
         continue1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentlay,new singup2frg());
-                fragmentTransaction.commit();
+                //FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                //fragmentTransaction.replace(R.id.fragmentlay,new singup2frg());
+                //fragmentTransaction.commit();
             }
         });
     }
 
-    private void date_Gestion(View view){
-
+    private void date_Gestion(){
         EditText et1 =view.findViewById(R.id.day);
         EditText et2 =view.findViewById(R.id.month);
         EditText et3 =view.findViewById(R.id.Year);
@@ -69,7 +65,7 @@ public class singup3frg extends Fragment {
                     year = Integer.parseInt(et3.getText().toString());
                     if(year > Integer.parseInt(String.valueOf(Year.now()))){
                         et3.requestFocus();
-                        toastGen("Enter a Valid Year",view);
+                        toastGen("Enter a Valid Year");
                     }
                 }
             }
@@ -95,7 +91,7 @@ public class singup3frg extends Fragment {
                     month = Integer.parseInt(et2.getText().toString());
                     if(month>12 || month<1){
                         et2.requestFocus();
-                        toastGen("Enter a Valid Month",view);
+                        toastGen("Enter a Valid Month");
                     }
                 }
             }
@@ -117,25 +113,21 @@ public class singup3frg extends Fragment {
                 // TODO Auto-generated method stub
 
             }
+            @RequiresApi(api = Build.VERSION_CODES.O)
             public void afterTextChanged(Editable s) {
                 // TODO Auto-generated method stub
                 if(et1.getText().toString().length()==2){
                     day = Integer.parseInt(et1.getText().toString());
                     if (Singup.isValid(year +"-"+ month +"-"+ day)){
+                        bithday = day + "/" +month + "/" +year;
                     }
                     else {
                         et1.requestFocus();
-                        toastGen("Enter a Valid Day",view);
+                        toastGen("Enter a Valid Day");
                     }
                 }
             }
 
         });
-    }
-
-    public void toastGen(String msg,View view){
-
-        Toast.makeText(view.getContext(),msg, Toast.LENGTH_LONG).show();
-    }
-
+    }*/
 }

@@ -1,5 +1,9 @@
 package com.example.tinderclone.Login;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import java.security.KeyStore;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -9,11 +13,20 @@ import java.time.format.ResolverStyle;
 public class Singup {
 
     String email;
-    KeyStore.PasswordProtection password;
+    String password;
     String username;
     String firstname;
     String lastname;
-    Gender gender;
+    String gender;
+    String birthday;
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
 
     public String getEmail() {
         return email;
@@ -23,7 +36,7 @@ public class Singup {
         this.email = email;
     }
 
-    public void setPassword(KeyStore.PasswordProtection password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -51,14 +64,15 @@ public class Singup {
         this.lastname = lastname;
     }
 
-    public Gender getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static boolean isValid(final String date) {
 
         boolean valid = false;
@@ -77,5 +91,18 @@ public class Singup {
         }
 
         return valid;
+    }
+
+    @Override
+    public String toString() {
+        return "Singup{" +
+                "email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", username='" + username + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", gender='" + gender + '\'' +
+                ", birthday='" + birthday + '\'' +
+                '}';
     }
 }
