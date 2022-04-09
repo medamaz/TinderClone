@@ -3,6 +3,8 @@ package com.example.tinderclone.Frament_Maneger;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
@@ -17,6 +19,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.tinderclone.FireBase.DataReadAnDWrite;
 import com.example.tinderclone.Login.Singup;
 import com.example.tinderclone.R;
 
@@ -28,6 +31,7 @@ public class singup3frg extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.singup3, container, false);
         return view;
+
     }
     /*private void nextFragment(){
         Button continue1 =(Button) view.findViewById(R.id.Singupfinal);

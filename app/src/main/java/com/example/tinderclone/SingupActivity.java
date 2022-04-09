@@ -14,24 +14,35 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.tinderclone.FireBase.DataReadAnDWrite;
 import com.example.tinderclone.Frament_Maneger.singup1frg;
 import com.example.tinderclone.Frament_Maneger.singup2frg;
 import com.example.tinderclone.Frament_Maneger.singup3frg;
 import com.example.tinderclone.Login.Singup;
 import com.example.tinderclone.Login.ValidationHelper;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.time.Year;
 
 public class SingupActivity extends AppCompatActivity {
 
-    Singup singup;
-    String gender ="";
+    private FirebaseAuth mAuth;
+
+    Singup user;
+    String gender ="Man";
     String birthday;
     int year,month,day;
 
@@ -40,7 +51,9 @@ public class SingupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singup);
 
-        singup = new Singup();
+        mAuth = FirebaseAuth.getInstance();
+
+        user = new Singup();
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.fragmentlay, new singup1frg(),"one");
@@ -68,9 +81,9 @@ public class SingupActivity extends AppCompatActivity {
         },true);
     }
 
-    public void toastGen(String msg) {
-
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     private void fragmentOne(Fragment currentFragment){
@@ -83,21 +96,18 @@ public class SingupActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (ValidationHelper.Validate(email.getText().toString(),pass.getText().toString(),cpass.getText().toString())){
-                        singup.setEmail(email.getText().toString());
-                        singup.setPassword(pass.getText().toString());
-                        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.add(R.id.fragmentlay, new singup2frg(),"two");
-                        fragmentTransaction.commit();
+                        user.setEmail(email.getText().toString());
+                        user.setPassword(pass.getText().toString());
+                        createAccount(email.getText().toString(),pass.getText().toString());
                     }
-
                 }
             });
         }
         catch (Exception ex){
             toastGen(ex.getMessage());
         }
-
     }
+
     private void fragmentTwo(Fragment currentFragment){
         try {
             EditText username = (EditText) currentFragment.getView().findViewById(R.id.username);
@@ -108,9 +118,9 @@ public class SingupActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if(!username.getText().toString().equals("") && !firstname.getText().toString().equals("") && !lastname.getText().toString().equals("")){
-                        singup.setUsername(username.getText().toString());
-                        singup.setFirstname(firstname.getText().toString());
-                        singup.setLastname(lastname.getText().toString());
+                        user.setUsername(username.getText().toString());
+                        user.setFirstname(firstname.getText().toString());
+                        user.setLastname(lastname.getText().toString());
                         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.fragmentlay, new singup3frg(), "tree");
                         fragmentTransaction.commit();
@@ -127,9 +137,11 @@ public class SingupActivity extends AppCompatActivity {
         }
 
     }
+
     private void fragmentTree(Fragment currentFragment){
         try {
-            date_Gestion(currentFragment.getView());
+
+            dateController(currentFragment.getView());
             RadioGroup rd = currentFragment.getView().findViewById(R.id.raiogroup);
             rd.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
@@ -145,21 +157,25 @@ public class SingupActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if(!gender.equals("") && !birthday.equals("")){
-                        singup.setGender(gender);
-                        singup.setBirthday(birthday);
-                        getSupportFragmentManager().beginTransaction().remove(getSupportFragmentManager().findFragmentById(R.id.fragmentlay)).commit();
+                        user.setGender(gender);
+                        user.setBirthday(birthday);
+
+                        DataReadAnDWrite.writeUserToDataBase(user);
+
                         moveToMain();
                     }
-                    else
+                    else{
                         toastGen("Vide Champ");
+                     }
                 }
             });
         }
-       catch (Exception exception){
+        catch (Exception exception){
             toastGen(exception.getMessage());
-       }
+        }
     }
-    private void date_Gestion(View view){
+
+    private void dateController(View view){
         try {
             EditText et1 =view.findViewById(R.id.day);
             EditText et2 =view.findViewById(R.id.month);
@@ -252,9 +268,52 @@ public class SingupActivity extends AppCompatActivity {
         }
     }
 
+    private void createAccount(String email, String password) {
+        // [START create_user_with_email]
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("TAG", "createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI(user);
+
+                            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                            fragmentTransaction.add(R.id.fragmentlay, new singup2frg(),"two");
+                            fragmentTransaction.commit();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("TAG", "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(SingupActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+                    }
+                });
+        // [END create_user_with_email]
+    }
+
+    private static void updateUI(FirebaseUser currentuser) {
+    }
+
+    public void toastGen(String msg) {
+
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
     public void moveToMain(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-        MainActivity.setSingup(singup);
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            getSupportFragmentManager().beginTransaction().remove(getSupportFragmentManager().findFragmentById(R.id.fragmentlay)).commit();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+        }
+        else {
+            Toast.makeText(this,"erreur",Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
+

@@ -20,6 +20,16 @@ public class Singup {
     String gender;
     String birthday;
 
+    public Singup(String email, String password, String username, String firstname, String lastname, String gender, String birthday) {
+        this.email = email;
+        this.password = password;
+        this.username = username;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.gender = gender;
+        this.birthday = birthday;
+    }
+
     public String getBirthday() {
         return birthday;
     }
@@ -70,6 +80,10 @@ public class Singup {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public Singup(){
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

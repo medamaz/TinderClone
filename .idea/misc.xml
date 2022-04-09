@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.196" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.196" />
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/button_background.xml" value="0.22" />
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/button_res.xml" value="0.22" />
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/ic_launcher.xml" value="0.196" />
@@ -12,10 +13,12 @@
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/login_contunue_background.xml" value="0.22" />
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/login_contunue_res.xml" value="0.22" />
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/drawable/login_contunue_text_color.xml" value="0.22" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_data_base_test.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_datawrite.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_fragmentact.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_login.xml" value="0.3484375" />
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_login_method.xml" value="0.3484375" />
-        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/activity_singup.xml" value="0.22" />
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/fragment_blank.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/moami/AndroidStudioProjects/TinderClone/app/src/main/res/layout/fragment_loginmethodepage.xml" value="0.36666666666666664" />
