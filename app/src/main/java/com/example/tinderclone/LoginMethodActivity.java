@@ -25,6 +25,7 @@ public class LoginMethodActivity extends AppCompatActivity {
         else {
             setContentView(R.layout.activity_login_method);
         }
+
     }
     @Override
     public void onBackPressed() {
@@ -39,6 +40,7 @@ public class LoginMethodActivity extends AppCompatActivity {
     public void moveToMain(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+        finish();
     }
 
 

@@ -20,16 +20,6 @@ public class Singup {
     String gender;
     String birthday;
 
-    public Singup(String email, String password, String username, String firstname, String lastname, String gender, String birthday) {
-        this.email = email;
-        this.password = password;
-        this.username = username;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.gender = gender;
-        this.birthday = birthday;
-    }
-
     public String getBirthday() {
         return birthday;
     }
@@ -86,6 +76,16 @@ public class Singup {
 
     }
 
+    public Singup(String email, String password, String username, String firstname, String lastname, String gender, String birthday) {
+        this.email = email;
+        this.password = password;
+        this.username = username;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.gender = gender;
+        this.birthday = birthday;
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static boolean isValid(final String date) {
 
@@ -111,7 +111,6 @@ public class Singup {
     public String toString() {
         return "Singup{" +
                 "email='" + email + '\'' +
-                ", password='" + password + '\'' +
                 ", username='" + username + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +

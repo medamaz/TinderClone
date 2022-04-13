@@ -82,6 +82,7 @@ public class LoginActivity extends AppCompatActivity {
     public void moveToMain(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+        finish();
     }
 
 }

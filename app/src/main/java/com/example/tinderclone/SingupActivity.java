@@ -295,8 +295,7 @@ public class SingupActivity extends AppCompatActivity {
         // [END create_user_with_email]
     }
 
-    private static void updateUI(FirebaseUser currentuser) {
-    }
+    private void updateUI(FirebaseUser currentuser) {}
 
     public void toastGen(String msg) {
 
@@ -309,6 +308,7 @@ public class SingupActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().remove(getSupportFragmentManager().findFragmentById(R.id.fragmentlay)).commit();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+            finish();
         }
         else {
             Toast.makeText(this,"erreur",Toast.LENGTH_SHORT).show();
